@@ -32,3 +32,11 @@ function love.keypressed(key, isrepeat)
         char.y = char.y + 5 -- TODO: Lerp this...? I think that's the animation keyword.
     end
 end
+
+-- Design notes
+
+-- If the skiier goes to the bottom of the screen, game over.
+-- Words will slide up the slope. Upon successful typing of the words (have a text box), the skiier will bump "up" on the screen.
+-- This should- visually- look more like the whole "camera" is moving up to show more words.
+-- The further away words are a little longer but should slide up a little more and might have coins on the way or something
+-- For starters, just have the same tileset constantly generated alongside random words from a text file. Eventually... procedurally generate a path?

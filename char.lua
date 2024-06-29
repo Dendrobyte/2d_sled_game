@@ -5,7 +5,7 @@ function char.load()
     char.name = "Mark"
     char.move_one = love.graphics.newImage("ski_assets/Tiles/tile_0082.png")
     char.move_two = love.graphics.newImage("ski_assets/Tiles/tile_0083.png")
-    char.sprite = char.move_one
+    char.sprite = char.move_two
 
     char.x = 400
     char.y = 100
