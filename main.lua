@@ -1,10 +1,14 @@
 local char = require("char")
+local slope = require("slope")
 
 -- Load default values
 function love.load()
     -- Set up some default behaviors
     love.graphics.setDefaultFilter("nearest", "nearest", 0) -- Linear can die :)
     love.keyboard.setKeyRepeat(true)
+
+    -- Set up the background and start it
+    slope.load()
 
     -- Load "objects"
     char.load() 
@@ -14,10 +18,10 @@ function love.update(dt)
     char.update_sprite(dt)
 end
 
--- Draw a coloured rectangle.
+-- Draw things in the scene. Draw order is dependent on line order, so keep that in mind.
 function love.draw()
-    -- In versions prior to 11.0, color component values are (0, 102, 102)
-    love.graphics.print("Hello World! Debug text?", 800, 50)
+    slope.draw_map()
+    -- Draw character on top of e
     love.graphics.draw(char.sprite, char.x, char.y, 0, 3)
 end
 
